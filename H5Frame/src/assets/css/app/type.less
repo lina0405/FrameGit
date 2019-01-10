@@ -1,0 +1,229 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  line-height: @headings-line-height;
+  color: @headings-color;
+
+  small,
+  .small {
+    font-weight: normal;
+    color: @headings-small-color;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: @line-height-computed;
+  margin-bottom: (@line-height-computed / 2);
+
+  small,
+  .small {
+    font-size: 65%;
+  }
+}
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: (@line-height-computed / 2);
+  margin-bottom: (@line-height-computed / 2);
+
+  small,
+  .small {
+    font-size: 75%;
+  }
+}
+
+h1, .h1 { font-size: @font-size-h1; }
+h2, .h2 { font-size: @font-size-h2; }
+h3, .h3 { font-size: @font-size-h3; }
+h4, .h4 { font-size: @font-size-h4; }
+h5, .h5 { font-size: @font-size-h5; }
+h6, .h6 { font-size: @font-size-h6; }
+
+
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 (@line-height-computed / 2);
+}
+
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: (12px small font / 14px base font) * 100% = about 85%
+small,
+.small {
+  font-size: @font-size-small;
+}
+
+mark,
+.mark {
+  background-color: @state-warning-bg;
+  padding: .2em;
+}
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+.text-overflow {
+  .text-overflow()
+}
+
+// Contextual colors
+.text-muted {
+  color: @text-muted !important;
+}
+.text-primary {
+  color: @brand-primary !important;
+}
+.text-success {
+  color: @state-success-text !important;
+}
+.text-info {
+  color: @state-info-text !important;
+}
+.text-warning {
+  color: @state-warning-text !important;
+}
+.text-danger {
+  color: @state-danger-text !important;
+}
+.text-gray {
+  color: #999999;
+}
+.text-light-gray {
+  color: #cccccc;
+}
+.text-normal {
+  color: #000;
+}
+
+// Contextual backgrounds
+// For now we'll leave these alongside the text classes until v4 when we can
+// safely shift things around (per SemVer rules).
+.bg-primary {
+  // Given the contrast here, this is the only class to have its color inverted
+  // automatically.
+  color: #fff;
+  background: @brand-primary;
+}
+.bg-success {
+  background: @state-success-bg;
+}
+.bg-info {
+  background: @state-info-bg;
+}
+.bg-warning {
+  background: @state-warning-bg;
+}
+.bg-danger {
+  background: @state-danger-bg;
+}
+.bg-gray {
+  background: @body-gray;
+}
+.bg-white {
+  background: #fff;
+}
+
+// Lists
+// -------------------------
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: (@line-height-computed / 2);
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// Addresses
+address {
+  margin-bottom: @line-height-computed;
+  font-style: normal;
+  line-height: @line-height-base;
+}
+
+.line-text {
+  color: #cccccc;
+  text-align: center;
+  position: relative;
+  &::before, &::after {
+    display: block;
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    height: 0.02rem;
+    width: 35%;
+    background: #cccccc;
+    top: 50%;
+    margin-top: 0.01rem;
+  }
+  &::after {
+    right: 0;
+  }
+}
+
+.icon {
+  fill: currentColor;
+  overflow: hidden;
+  &.icon-30 {
+    height: 0.30rem;
+    width: 0.30rem;
+  }
+  &.icon-50 {
+    height: 0.50rem;
+    width: 0.50rem;
+  }
+  &.icon-56 {
+    height: 0.56rem;
+    width: 0.56rem;
+  }
+  &.icon-64 {
+    height: 0.64rem;
+    width: 0.64rem;
+  }
+  &.icon-80 {
+    height: 0.80rem;
+    width: 0.80rem;
+  }
+}
+
+.border-top {
+  border-top: @border-line;
+}
+
+.border-left {
+  border-left: @border-line;
+}
+
+.border-right {
+  border-right: @border-line;
+}
+
+.border-bottom {
+  border-bottom: @border-line;
+}
